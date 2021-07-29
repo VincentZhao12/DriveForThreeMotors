@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.commands.DrivingFor3Meters;
+import frc.robot.commands.StopMotors;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -45,7 +46,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    joystickButton.whenPressed(new DrivingFor3Meters(drivetrain));
+    joystickButton.whenPressed(new DrivingFor3Meters(drivetrain)).whenReleased(new StopMotors(drivetrain));
   }
 
   /**

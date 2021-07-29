@@ -5,16 +5,13 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-//import edu.wpi.first.wpilibj.Timer;
 import frc.robot.subsystems.Drivetrain;
 
-
-public class DrivingFor3Meters extends CommandBase {
-  /** Creates a new DrivingFor3Meters. */
+public class StopMotors extends CommandBase {
+  /** Creates a new StopMotors. */
 
   Drivetrain drivetrain;
-
-  public DrivingFor3Meters(Drivetrain drivetrainIn) {
+  public StopMotors(Drivetrain drivetrainIn) {
     // Use addRequirements() here to declare subsystem dependencies.
     drivetrain = drivetrainIn;
     addRequirements(drivetrain);
@@ -27,14 +24,12 @@ public class DrivingFor3Meters extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    drivetrain.startMotors(drivetrain.getMotorSpeed(3.0));
+    drivetrain.stopMotors();
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {
-    //drivetrain.stopMotors();
-  }
+  public void end(boolean interrupted) {}
 
   // Returns true when the command should end.
   @Override

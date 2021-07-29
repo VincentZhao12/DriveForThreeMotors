@@ -38,7 +38,7 @@ public class Drivetrain extends SubsystemBase {
     backRight = new TalonFX(2);
     backLeft = new TalonFX(3);
 
-    P = 0.7;
+    P = 0.05;
     I = 0.2;
     D = 0.1;
 
@@ -48,6 +48,12 @@ public class Drivetrain extends SubsystemBase {
 
     backRight.follow(frontRight);
     backLeft.follow(frontLeft);
+
+    backRight.setInverted(true);
+    frontRight.setInverted(true);
+
+    backLeft.setInverted(false);
+    frontLeft.setInverted(false);
   }
 
   @Override
